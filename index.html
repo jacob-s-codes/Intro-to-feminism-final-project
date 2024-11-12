@@ -8,16 +8,131 @@
 </head>
 <body class="bg-black text-white">
     <div class="flex flex-row items-center justify-center mt-[20vh]">
-        <div class="flex flex-col items-center">
-            <h1 class="text-white text-8xl">Intro to Feminism Final Project</h1>
-            <p class="mt-16 text-3xl">By Jacob Shaul</p>
+        <div class="flex flex-col items-center mt-[80vh]">
+            <h1 class="text-white text-8xl title-text">Intro to Feminism Final Project</h1>
+            <p class="mt-16 text-3xl sub-text">By Jacob Shaul</p>
+            <p class="bottom-0 absolute mb-56 animate-bounce">Scroll down!</p>
             <p class="bottom-0 absolute mb-20 text-6xl border-white border-4 rounded-xl px-4 py-4 animate-bounce">&darr;</p>
         </div>
     </div>
 
+    <div class="mt-[40vh]">
+        <div class="flex flex-row justify-center">
+            <img src="./img/sleek computer.jpeg" alt="image of computer" id="computer-image" class="rounded-2xl border-4 border-white">
+        </div>
+    </div>
+
+    <div class="mt-[40vh]">
+        <div class="flex flex-col">
+            <div class="items-start">
+                <p class="text-[300px] pl-4" id="big-code-text">Technology</p>
+            </div>
+            <div class="justify-end items-end">
+                <p class="text-6xl">Technology is a big part</p>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <!-- Extra height for scrolling -->
     <div class="mt-[160vh]">
-        <p>Hello</p>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script> 
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo(
+            ".title-text", 
+            {
+                x: -300, // Start off-screen to the left
+                opacity: 0, // Start invisible
+            },
+            {
+                x: 0, // Slide into its original position
+                opacity: 1, // Fade in
+                duration: 1, // Animation duration (1 second)
+                scrollTrigger: {
+                    trigger: ".title-text", // Element to watch
+                    start: "top 50%", // Start when title-text reaches 80% of viewport
+                    end: "top 30%", // End when title-text reaches 50% of viewport
+                    scrub: true, // Smoothly tie animation to scroll
+                    markers: false, // Debug markers
+                },
+            }
+        );
+
+        
+        gsap.fromTo(
+            "#computer-image",
+            {
+                scale: 0.5, // Start at normal size
+            },
+            {
+                scale: 1.1, 
+                scrollTrigger: {
+                    trigger: "#computer-image", // Element to watch
+                    start: "top 60%", // Start when the image is 80% down the viewport
+                    end: "bottom 80%", // End when the image is 50% down the viewport
+                    scrub: true, // Smoothly tie animation to scroll
+                    markers: true, // Debug markers
+                },
+            }
+        );
+
+        gsap.fromTo(
+            ".sub-text", 
+            {
+                x: 300, // Start off-screen to the right
+                opacity: 0, // Start invisible
+            },
+            {
+                x: 0, // Slide into its original position
+                opacity: 1, // Fade in
+                duration: 1, // Animation duration (1 second)
+                scrollTrigger: {
+                    trigger: ".sub-text", // Element to watch
+                    start: "bottom center", // Start when sub-text reaches 80% of viewport
+                    end: "305% center", // End when sub-text reaches 50% of viewport
+                    scrub: true, // Smoothly tie animation to scroll
+                    markers: false, // Debug markers
+                },
+            }
+        );
+
+        gsap.fromTo(
+            "#big-code-text",
+            {
+                x: -300,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#big-code-text",
+                    start: "top 50%",
+                    end: "top 30%",
+                    scrub: true,
+                    markers: false,
+                },
+            }
+        );
+
+        // Initialize Lenis
+        const lenis = new Lenis({
+        autoRaf: true,
+        });
+
+        // Listen for the scroll event and log the event data
+        lenis.on('scroll', (e) => {
+        console.log(e);
+        });
+    </script>
 </body>
 </html>

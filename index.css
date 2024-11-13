@@ -12,3 +12,8 @@
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 }
+
+.split-outline {
+    -webkit-text-stroke: 1px gray; /* Add a gray outline */
+    color: transparent; /* Make the inner part transparent */
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Video and Content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video class="video" playsinline="true" webkit-playsinline="true" preload="auto" muted="muted">
+            <source src="output.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="content">
+        Here's some text below the video!
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+        const lenis = new Lenis({
+        autoRaf: true,
+      });
+
+      // Listen for the scroll event and log the event data
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+        gsap.registerPlugin(ScrollTrigger);
+
+        const video = document.querySelector(".video");
+
+        // GSAP ScrollTrigger for video playback and scrolling
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".video-container",
+                start: "top top",
+                end: "bottom+=100% top", // Allow the video section to scroll naturally
+                scrub: true,
+                pin: true, // Pin the video during its animation
+                markers: true, // Debug markers (remove for production)
+            }
+        });
+
+        // Sync video playback with scroll
+        video.onloadedmetadata = function () {
+            tl.to(video, { currentTime: video.duration });
+        };
+
+        // Ensure the video initializes on touch devices
+        function isTouchDevice() {
+            return (
+                "ontouchstart" in window ||
+                navigator.maxTouchPoints > 0 ||
+                navigator.msMaxTouchPoints > 0
+            );
+        }
+        if (isTouchDevice()) {
+            video.play();
+            video.pause();
+        }
+    </script>
+</body>
+</html>

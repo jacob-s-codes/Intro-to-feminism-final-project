@@ -94,21 +94,10 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // gsap.set('.everything', { y: 50, opacity: 0 });
-
-    // gsap.to('.everything', {
-    //     y: 0,
-    //     opacity: 1,
-    //     stagger: 0.1,
-    //     delay: 0.5, // Delay before animation starts
-    //     duration: 1, // Animation duration
-    //     ease: 'power3.out' // Easing function
-    // });
 
 
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
+
+
 
     const splitTypes = document.querySelectorAll(".split-type");
 

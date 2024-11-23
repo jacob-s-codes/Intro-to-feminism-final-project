@@ -3,7 +3,7 @@
     opacity: 1;
   }
 
-#computer-image {
+.computer-image {
     background: transparent;
     mask-image: url('./img/computerimage.jpg');
     -webkit-mask-image: url('./img/computerimage.jpg'); /* For WebKit browsers */

@@ -43,8 +43,8 @@
     <div class="initial-bg">
       <img src="./img/digitalworld.jpeg" alt="" class="header-image" />
     </div>
-    
-  
+
+
     <div class="h-screen flex items-center mt-24 flex-col top-0">
 
       <h1 class="text-9xl">
@@ -56,12 +56,14 @@
 
 
   <div class="">
-    <div class="text-8xl mb-[10vh]">
-      <p class="pl-4">"We must ensure that technology amplifies women’s voices so that they may have a stronger impact on the future course of our world."</p>
+    <div class="text-8xl mb-[20vh]">
+      <p class="pl-8">"We must ensure that technology amplifies women’s voices so that they may have a stronger impact
+        on the future course of our world."</p>
       <p class="text-right mt-24 px-12">-Sima Bahous</p>
     </div>
-    <div class="flex flex-col" id="big-code-text">
-      <h2 class="text-[200px] split-type">The Beginning: An Education<span class="blink-cursor">|</span></span></h2>
+    <div class="flex flex-col text-[200px] slow-split-type" id="big-code-text">
+      <h2 class="">The Beginning: </h2>
+      <h2 class="pl-[20%]">An Education<span class="blink-cursor">|</span></span></h2>
     </div>
   </div>
 
@@ -71,10 +73,62 @@
     </div>
   </div>
 
-  <div class="bg-white pt-[10vh] text-black">
-    <p class="pb-[50vh] text-9xl pl-40 underline">Art</p>
+  <div class="bg-white  text-black relative py-[10vh] ">
+
+
+    <h2 class="title-text text-9xl pl-40 ">
+      Art
+    </h2>
+
+    <p class="pt-16 px-40 text-2xl text-from-right">Prior to this class, art and feminism never struck me as similar.
+      They are
+      so different; so seperate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, perspiciatis. Lorem
+      ipsum dolor sit, amet consectetur adipisicing elit. Suscipit ex officiis totam beatae saepe possimus dolores quo
+      illo accusantium a ducimus sed, consectetur accusamus. Esse veniam odit dignissimos provident architecto!</p>
+
+    <div class="flex flex-row items-center justify-center gap-x-12 mt-24 py-8 mx-40 border-8 border-red-500 rounded-xl"
+      id="computer-image">
+      <img src="./img/Screenshot 2024-11-23 at 3.01.40 PM.png" alt="art images"
+        class="w-96 h-auto rounded-lg border-4 border-red-500">
+      <div class="flex flex-col items-center justify-between gap-y-[100px] ">
+        <img src="./img/lastsupper.jpg" alt="" class="w-96 h-auto rounded-lg border-4 border-red-500">
+        <img src="./img/krugerimage.webp" alt="" class="w-96 h-auto rounded-lg border-4 border-red-500">
+      </div>
+      <img src="./img/Iknewnotfrommemory.jpg" alt="" class="w-96 h-auto rounded-lg border-4 border-red-500">
+    </div>
   </div>
-  
+
+  <div class="needs-bg py-[50vh] bg-gray-300">
+
+    <p class="z-10 pl-24 text-blue-300 text-center xl:text-[155px] text-8xl flex justify-center">But art is so much more</p>
+  </div>
+
+  <div class="py-[50vh] velour-bg bg-gray-200">
+    <p class=" pl-12 xl:text-[155px] text-8xl flex justify-center text-blue-300">This is art</p>
+  </div>
+
+  <div class="py-[50vh] graphic-bg bg-gray-500">
+    <p class=" pl-12 xl:text-[155px] text-8xl flex justify-center text-blue-300">And so is this</p>
+  </div>
+
+  <div class="py-96 bg-gradient-to-b from-blue-800 to-blue-300 earth-bg">
+    <p class="text-9xl flex items-center justify-center text-center">
+        One of my biggest takeaways from this class is that the world isn't binary
+    </p>  
+</div>
+
+<div class="py-96 pl-12">
+  <p>I wonder</p>
+  <p>if {
+
+  </p>
+  <p class="pl-4">this is art?;</p>
+  <p>}</p>
+</div>
+
+
+
+
   <!-- Extra height for scrolling -->
   <div class="mt-[160vh]"></div>
 
@@ -122,7 +176,7 @@
         for (let i = phrase.length; i > 0; i--) {
           // if (!isWriting) break;
           el.innerText = phrase.substring(0, i - 1);
-          await sleep(sleepTime);
+          await sleep(sleepTime / 1.5);
         }
         await sleep(sleepTime * 10);
       }
@@ -130,6 +184,113 @@
     };
 
     writeLoop();
+
+    const parallax = document.querySelector('.needs-bg');
+
+    // Initialize the Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Check if the element is intersecting
+          if (entry.isIntersecting) {
+            console.log('Element is in view, restarting animation');
+            parallax.style.animation = 'none'; // Reset animation
+            void parallax.offsetWidth; // Trigger reflow
+            parallax.style.animation = 'parallaxMove 5s ease-in-out forwards';
+          } else {
+            console.log('Element is out of view');
+          }
+        });
+      },
+      {
+        root: null, // Observe relative to the viewport
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    // Start observing the element
+    observer.observe(parallax);
+
+    const second_parallax = document.querySelector('.velour-bg');
+
+    // Initialize the Intersection Observer
+    const second_observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Check if the element is intersecting
+          if (entry.isIntersecting) {
+            console.log('Element is in view, restarting animation');
+            second_parallax.style.animation = 'none'; // Reset animation
+            void second_parallax.offsetWidth; // Trigger reflow
+            second_parallax.style.animation = 'parallaxMove 5s ease-in-out forwards';
+          } else {
+            console.log('Element is out of view');
+          }
+        });
+      },
+      {
+        root: null, // Observe relative to the viewport
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    // Start observing the element
+    second_observer.observe(parallax);
+
+    const third_parallax = document.querySelector('.graphic-bg');
+
+    // Initialize the Intersection Observer
+    const third_observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Check if the element is intersecting
+          if (entry.isIntersecting) {
+            console.log('Element is in view, restarting animation');
+            third_parallax.style.animation = 'none'; // Reset animation
+            void third_parallax.offsetWidth; // Trigger reflow
+            third_parallax.style.animation = 'parallaxMove 5s ease-in-out forwards';
+          } else {
+            console.log('Element is out of view');
+          }
+        });
+      },
+      {
+        root: null, // Observe relative to the viewport
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    // Start observing the element
+    third_observer.observe(parallax);
+
+
+
+    const scrollers = document.querySelectorAll(".scroller");
+
+    // If a user hasn't opted in for recuded motion, then we add the animation
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+
+    function addAnimation() {
+      scrollers.forEach((scroller) => {
+        // add data-animated="true" to every `.scroller` on the page
+        scroller.setAttribute("data-animated", true);
+
+        // Make an array from the elements within `.scroller-inner`
+        const scrollerInner = scroller.querySelector(".scroller_inner");
+        const scrollerContent = Array.from(scrollerInner.children);
+
+        // For each item in the array, clone it
+        // add aria-hidden to it
+        // add it into the `.scroller-inner`
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute("aria-hidden", true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
+      });
+    }
   </script>
 </body>
 

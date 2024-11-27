@@ -19,6 +19,25 @@ splitTypes.forEach((char) => {
     });
 });
 
+const slowerSplit = document.querySelectorAll(".slow-split-type");
+
+slowerSplit.forEach((char) => {
+    const text = new SplitType(char, { types: "chars" });
+    gsap.from(text.chars, {
+        scrollTrigger: {
+            trigger: char,
+            start: "top 60%",
+            end: "bottom 30%",
+            scrub: true,
+            markers: true, // Set to true for debugging; remove for production
+        },
+        opacity: 0, // Start fully invisible
+        // y: 20, // Move up into position
+        stagger: 0.05, // Add a slight delay between each character
+        duration: 1, // Optional duration for each character's animation
+    });
+});
+
 gsap.fromTo(
     ".title-text",
     {
@@ -40,16 +59,36 @@ gsap.fromTo(
 );
 
 gsap.fromTo(
-    "#computer-image",
+    ".text-from-right",
     {
-        scale: 0.5, // Start at normal size
+        x: 800, // Start off-screen to the left
+        opacity: 0, // Start invisible
     },
     {
-        scale: 1.1,
+        x: 0, // Slide into its original position
+        opacity: 1, // Fade in
+        duration: 1, // Animation duration (1 second)
+        scrollTrigger: {
+            trigger: ".title-text", // Element to watch
+            start: "bottom 80%", // Start when title-text reaches 80% of viewport
+            end: "bottom 20%", // End when title-text reaches 50% of viewport
+            scrub: true, // Smoothly tie animation to scroll
+            markers: false, // Debug markers
+        },
+    }
+);
+
+gsap.fromTo(
+    "#computer-image",
+    {
+        scale: 0.75, // Start at normal size
+    },
+    {
+        scale: 1.2,
         scrollTrigger: {
             trigger: "#computer-image", // Element to watch
             start: "top 60%", // Start when the image is 80% down the viewport
-            end: "bottom 80%", // End when the image is 50% down the viewport
+            end: "bottom 70%", // End when the image is 50% down the viewport
             scrub: true, // Smoothly tie animation to scroll
             markers: true, // Debug markers
         },

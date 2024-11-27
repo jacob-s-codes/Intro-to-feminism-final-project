@@ -46,7 +46,7 @@
 .cursor {
     width: 20px;
     height: 20px;
-    border: 1px solid white;
+    border: 1px solid rgb(98, 92, 92);
     border-radius: 50%;
     position: absolute;
     transition-duration: 200ms;
@@ -69,7 +69,7 @@
 
 .expand {
     animation: cursorAnim .5s forwards;
-    border: 1px solid white;
+    border: 1px solid rgb(98, 92, 92);
 
 }
 
@@ -87,6 +87,66 @@
     }
 }
 
+.slow-split-type {
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Compatibility */
+  }
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .needs-bg {
+    background-image: url("./img/sindon'tlive.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-attachment: fixed;
+    animation: none;
+  }
+
+  .velour-bg {
+    background-image: url("./img/sashavelour.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: none;
+    background-attachment: fixed;
+    background-position: 0 center;
+    background-blend-mode: multiply;
+  }
+
+  .graphic-bg {
+    background-image: url("./img/qgh.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: none;
+    background-attachment: fixed;
+    background-position: 0 center;
+    background-blend-mode: multiply;
+  }
+
+  /* .earth-bg {
+    background-image: url("img/globeshot.jpg");
+    background-size: cover;
+  } */
+
+  @keyframes parallaxMove {
+    0% {
+        background-position: 0 center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+  }
+
+  .content {
+    
+    height: 500px;
+  }
+  
+  
 
 
 

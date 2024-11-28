@@ -127,10 +127,13 @@
     background-blend-mode: multiply;
   }
 
-  /* .earth-bg {
+  .earth-bg {
     background-image: url("img/globeshot.jpg");
     background-size: cover;
-  } */
+    background-color: gray;
+    background-blend-mode: multiply;
+    
+  }
 
   @keyframes parallaxMove {
     0% {

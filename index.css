@@ -135,6 +135,15 @@
     
   }
 
+  .sf-bg {
+    background-image: url("./img/sfbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: gray;
+    background-blend-mode: multiply;
+    background-attachment:unset; 
+  }
+
   @keyframes parallaxMove {
     0% {
         background-position: 0 center;

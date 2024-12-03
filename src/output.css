@@ -742,6 +742,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -760,6 +765,10 @@ video {
 
 .from-90\%{
   --tw-gradient-from-position: 90%;
+}
+
+.from-60\%{
+  --tw-gradient-from-position: 60%;
 }
 
 .to-blue-800{
@@ -798,6 +807,11 @@ video {
 .py-\[50vh\]{
   padding-top: 50vh;
   padding-bottom: 50vh;
+}
+
+.py-\[100vh\]{
+  padding-top: 100vh;
+  padding-bottom: 100vh;
 }
 
 .pl-12{

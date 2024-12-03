@@ -120,12 +120,18 @@
     </p>  
 </div>
 
-<div class="py-96 pl-96 bg-gradient-to-b text-6xl from-[#05060b] from-90% to-blue-200">
+<div class="py-96 pl-96 bg-gradient-to-b text-6xl from-[#05060b] from-60% to-blue-200">
   <p class="">I wonder...</p>
   <p class="pt-12">if {
   </p>
-  <p class="pl-8 py-8">this is art?;</p>
+  <p class="pl-8 py-8">T<span id="secondtypewriter"></span></p>
   <p>}</p>
+</div>
+
+<div class="sf-bg py-[100vh]">
+  <div class="flex justify-center ">
+    hi
+  </div>
 </div>
 
 
@@ -186,6 +192,32 @@
     };
 
     writeLoop();
+
+    const el2 = document.getElementById("secondtypewriter");
+    const phrase2 = "his is art;?";
+
+    const writesecondloop = async () => {
+      await sleep(1000);
+      while (true) {
+        for (let i = 0; i < phrase2.length; i++) {
+          // if (!isWriting) break;
+          el2.innerText = phrase2.substring(0, i + 1);
+          await sleep(sleepTime);
+        }
+
+        await sleep(sleepTime * 10);
+
+        for (let i = phrase2.length; i > 0; i--) {
+          // if (!isWriting) break;
+          el2.innerText = phrase2.substring(0, i - 1);
+          await sleep(sleepTime / 1.5);
+        }
+        
+      }
+
+    };
+
+    writesecondloop();
 
     const parallax = document.querySelector('.needs-bg');
 

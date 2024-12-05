@@ -145,6 +145,16 @@
     background-position: center center;
   }
 
+  .bg-optimize {
+    background-image: url("./img/trickmirrorimg.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(69, 67, 67);
+    background-blend-mode: multiply;
+    background-attachment:unset; 
+    background-position: center center;
+  }
+
   @keyframes parallaxMove {
     0% {
         background-position: 0 center;

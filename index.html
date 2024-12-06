@@ -283,24 +283,26 @@
         <p class="pl-24">Here is some text</p>
       </div>
     </div>
-
-
-    <section class="">
+  
+    <section class="panel w-full">
       ONE
     </section>
-    <section class="b">
+    <section class="panel">
       TWO
     </section>
-    <section class="panel purple">
+    <section class="panel ">
       THREE
     </section>
-    <section class="panel green">
+    <section class="panel">
       FOUR
     </section>
-    <section class="panel gray">
+    <section class="panel">
       FIVE
     </section>
+  </div>
 
+  <div class="pt-[50vh] w-full bg-white text-black">
+    Here's stuff below
   </div>
   
 
@@ -330,7 +332,7 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.registerPlugin(ScrollTrigger);
+    
 
     let horizontalSections = gsap.utils.toArray(".verticalscroll");
 

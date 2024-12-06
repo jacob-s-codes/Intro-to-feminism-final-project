@@ -204,6 +204,26 @@
     background-attachment:unset; 
     background-position: center center;
   }
+
+  .gwc-bg {
+    background-image: url("./img/girlswhocodebg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(57, 57, 57);
+    background-blend-mode: multiply;
+    background-attachment:unset; 
+    background-position: center center;
+  }
+
+  .graph-bg {
+    background-image: url("./img/graduategraph.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(57, 57, 57);
+    background-blend-mode: multiply;
+    background-attachment:unset; 
+    background-position: center center;
+  }
   
   
   

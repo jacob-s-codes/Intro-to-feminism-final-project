@@ -194,6 +194,16 @@
     color: white;
     background-color: red;
   }
+
+  .riot-bg {
+    background-image: url("./img/riotgrrrlbg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(57, 57, 57);
+    background-blend-mode: multiply;
+    background-attachment:unset; 
+    background-position: center center;
+  }
   
   
   

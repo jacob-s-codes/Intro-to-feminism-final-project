@@ -217,11 +217,11 @@
 
   .graph-bg {
     background-image: url("./img/graduategraph.png");
-    background-size: cover;
+    background-size:contain;
     background-repeat: no-repeat;
     background-color: rgb(57, 57, 57);
     background-blend-mode: multiply;
-    background-attachment:unset; 
+    /* background-attachment:unset;  */
     background-position: center center;
   }
   

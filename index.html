@@ -282,7 +282,7 @@
 
   <div class="verticalscroll text-4xl ">
     <div class="description panel blue">
-      <div class="riot-bg w-full h-full flex flex-col items-center justify-center text-red-400">
+      <div class="riot-bg w-full h-full flex flex-col items-center justify-center text-red-200">
         <p class="text-9xl">Because...</p>
         <p class="text-center font-bold ">"diversity is critical to ensuring that technology meets everyone’s needs"</p>
       </div>
@@ -295,24 +295,51 @@
       </div>
       
     </section>
-    <section class="panel  text-center text-4xl graph-bg ">
+    <section class="panel text-red-200 text-center text-4xl graph-bg ">
       <div class="w-full h-full flex justify-center graph-bg">
-        <div class="flex flex-col items-center justify-start h-full">
-          <p class="text-9xl">Because...</p>
-          <p class="font-bold">this graph exists.</p>
+        <div class="flex flex-col justify-center">
+          <div class="flex flex-col items-center justify-start h-full">
+            <p class="text-9xl">Because...</p>
+            <p class="font-bold mb-6">this graph exists.</p>
+          </div>
+          <div class="flex items-center justify-center">
+            <p>(Graduates from STEM Subjects)</p>
+          </div>
         </div>
+        
       </div>
       
       
     </section>
-    <section class="panel ">
-      THREE
+    <section class="panel  text-center text-4xl othergraph-bg ">
+      <div class="w-full h-full flex  ">
+        <div class="flex flex-col ">
+          <div class="flex flex-col items-center  h-full">
+            <p class="text-9xl">Because...</p>
+            <p class="font-bold mb-6">this graph also exists.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="panel text-red-200 text-center text-4xl engineer-bg ">
+      <div class="w-full h-full flex  ">
+        <div class="flex flex-col ">
+          <div class="flex flex-col items-center justify-end h-full">
+            <p class="text-8xl">And because this one</p>
+          </div>
+          
+        </div>
+      </div>
     </section>
     <section class="panel">
-      FOUR
-    </section>
-    <section class="panel">
-      FIVE
+      <div class="flex flex-col justify-center">
+        <p class=text-center>Technology and Engineering are currently 2 of the most impactful fields, making the biggest breakthroughs and producing solutions for global solutions. Having such disproportionate representations is both worrying and angering.</p>
+
+        <p class="text-center px-12 pt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam itaque voluptates, excepturi accusamus veniam commodi deserunt architecto maiores. Provident consectetur deleniti eum quisquam veniam dolorem similique et, eaque, ipsum tempora perspiciatis eligendi? Vitae eum sint quis doloribus sapiente explicabo eveniet quam aut repudiandae! Voluptatibus, iusto soluta! Fugit eius atque esse?</p>
+
+      </div>
+      
     </section>
   </div>
 
@@ -360,9 +387,9 @@
         scrollTrigger: {
           trigger: container,
           pin: true,
-          scrub: 2,
+          scrub: 0.5,
           // base vertical scrolling on how wide the container is so it feels more natural.
-          end: "+=5000",
+          end: "+=6000",
         }
       });
     })

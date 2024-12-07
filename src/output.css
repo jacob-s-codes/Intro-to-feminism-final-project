@@ -719,6 +719,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-8{
+  gap: 2rem;
+}
+
 .gap-x-12{
   -moz-column-gap: 3rem;
        column-gap: 3rem;

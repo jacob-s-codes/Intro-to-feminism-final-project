@@ -10,7 +10,7 @@ splitTypes.forEach((char) => {
             start: "top 40%",
             end: "bottom 60%",
             scrub: true,
-            markers: true, // Set to true for debugging; remove for production
+            markers: false, // Set to true for debugging; remove for production
         },
         opacity: 0, // Start fully invisible
         // y: 20, // Move up into position
@@ -29,7 +29,7 @@ slowerSplit.forEach((char) => {
             start: "top 60%",
             end: "bottom 30%",
             scrub: true,
-            markers: true, // Set to true for debugging; remove for production
+            markers: false, // Set to true for debugging; remove for production
         },
         opacity: 0, // Start fully invisible
         // y: 20, // Move up into position
@@ -90,7 +90,7 @@ gsap.fromTo(
             start: "top 60%", // Start when the image is 80% down the viewport
             end: "bottom 70%", // End when the image is 50% down the viewport
             scrub: true, // Smoothly tie animation to scroll
-            markers: true, // Debug markers
+            markers: false, // Debug markers
         },
     }
 );

@@ -43,7 +43,7 @@
     }
 }
 
-.cursor {
+/* .cursor {
     width: 20px;
     height: 20px;
     border: 1px solid rgb(98, 92, 92);
@@ -71,7 +71,7 @@
     animation: cursorAnim .5s forwards;
     border: 1px solid rgb(98, 92, 92);
 
-}
+} */
 
 .blink-cursor {
     animation: blink 1s linear infinite;

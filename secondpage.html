@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
 </head>
-<body>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+  
     
+  
+    
+  </style>
+
+<body class="bg-black text-white font-customFont everything  ">
+    <div class="pb-[50vh]">
+        <div class="initial-bg">
+            <img src="./img/connectedglobe.jpg" alt="" class="header-image" />
+        </div>
+
+
+        <div class="initial-bg">
+            <svg width="1150" height="607" class="flex w-full justify-center items-center pt-12" viewBox="0 0 1150 607"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="879" cy="119.5" rx="95" ry="105.5" fill="#D9D9D9" />
+                <rect y="27" width="26" height="185" fill="#D9D9D9" />
+                <path
+                    d="M10.5251 202.525C9.15829 203.892 9.15829 206.108 10.5251 207.475L32.799 229.749C34.1658 231.116 36.3819 231.116 37.7487 229.749C39.1156 228.382 39.1156 226.166 37.7487 224.799L17.9498 205L37.7487 185.201C39.1156 183.834 39.1156 181.618 37.7487 180.251C36.3819 178.884 34.1658 178.884 32.799 180.251L10.5251 202.525ZM154 201.5L13 201.5V208.5L154 208.5V201.5Z"
+                    fill="white" />
+                <path d="M208 24L227.053 202.5H188.947L208 24Z" fill="#D9D9D9" />
+                <path d="M280 10L361 25H208L280 10Z" fill="#D9D9D9" />
+                <path
+                    d="M354.456 116.732C357.07 114.271 357.193 110.158 354.732 107.544L314.629 64.9535C312.168 62.3399 308.054 62.2162 305.441 64.6771C302.827 67.1381 302.703 71.2518 305.164 73.8654L340.812 111.724L302.953 147.371C300.34 149.832 300.216 153.946 302.677 156.559C305.138 159.173 309.252 159.297 311.865 156.836L354.456 116.732ZM216.805 114.497L349.805 118.497L350.195 105.503L217.195 101.503L216.805 114.497Z"
+                    fill="white" />
+                <line x1="186" y1="202.5" x2="335" y2="202.5" stroke="white" stroke-width="5" />
+                <path
+                    d="M718.882 39.3268C718.882 22.3076 704.801 11.6201 689.491 6.94225C668.701 0.589627 645.819 10.4261 633.159 27.6248C625.573 37.9295 625.811 49.7292 625.811 61.9144C625.811 78.7517 634.378 87.861 647.718 97.3605C662.152 107.64 678.972 115.037 696.567 117.703C706.48 119.205 720.001 119.754 728.679 125.595C741.186 134.013 737.252 161.459 737.252 174.036C737.252 195.075 728.969 210.298 707.044 215.401C681.256 221.403 644.475 223.27 627.784 198.596C618.712 185.186 619.905 169.71 624.586 155.666"
+                    stroke="white" stroke-width="9" stroke-linecap="round" />
+                <path d="M566.5 42.5L489.5 21.5L444 64.5L525 134.5L499.5 197L426 176" stroke="#FFFBFB" stroke-width="16" />
+                <path
+                    d="M879 84L885.286 108.53H905.63L889.172 123.69L895.458 148.22L879 133.06L862.542 148.22L868.828 123.69L852.37 108.53H872.714L879 84Z"
+                    fill="black" />
+                <path d="M1013 27L1030.32 216H995.679L1013 27Z" fill="#D9D9D9" />
+                <path
+                    d="M1016.13 31.4889C1016.44 37.3757 1019.94 42.4128 1022.26 47.6811C1026.64 57.6705 1031.62 67.6094 1035.59 77.7525C1042.02 94.1774 1052.16 110.771 1061.44 125.785C1070.18 139.911 1075.35 156.554 1084.17 170.416C1092.6 183.667 1098.72 199.116 1105.53 212.734"
+                    stroke="white" stroke-width="3" stroke-linecap="round" />
+                <path
+                    d="M635 458C635 496.422 624.571 530.483 608.551 554.473C592.458 578.573 571.975 591 551.5 591C531.025 591 510.542 578.573 494.449 554.473C478.429 530.483 468 496.422 468 458C468 419.578 478.429 385.517 494.449 361.527C510.542 337.427 531.025 325 551.5 325C571.975 325 592.458 337.427 608.551 361.527C624.571 385.517 635 419.578 635 458Z"
+                    stroke="white" stroke-width="32" />
+                <path
+                    d="M1101.83 216.314C1104.21 218.617 1108.01 218.553 1110.31 216.17L1147.85 177.345C1150.15 174.962 1150.08 171.164 1147.7 168.861C1145.32 166.558 1141.52 166.622 1139.22 169.004L1105.86 203.516L1071.34 170.155C1068.96 167.852 1065.16 167.916 1062.86 170.299C1060.56 172.681 1060.62 176.48 1063 178.783L1101.83 216.314ZM1097 35.1017L1100 212.102L1112 211.898L1109 34.8983L1097 35.1017Z"
+                    fill="white" />
+            </svg>
+    
+            <h1 class="slow-split-type text-9xl pt-36 pl-36">The future</h1>
+        </div>
+    </div>
+    <div class="bg-gradient-to-l from-blue-500 to-pink-500 pb-[50vh] pt-[5vh]">
+        <a href="https://www.stemwomen.com/women-in-stem-statistics-progress-and-challenges" target="_blank" class=""><h2 class=" text-7xl underline ml-16">It's now up to you</h2></a>
+
+        <div class="flex flex-row gap-12 justify-between mt-36 w-full">
+            <div class="ml-16">
+                <img src="./img/connectedglobe.jpg" alt="" class="ml-">
+            </div>
+            
+            <a href="" class="underline"><p class="text-4xl">Find the issue that <span class="underline font-bold">you're passionate about.</span></p></a>
+
+        </div>
+    </div>
+    
+
+    <div class="pt-[150vh]"></div>
+    <script src="./src/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+
 </body>
+
 </html>

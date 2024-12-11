@@ -11,20 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
-  <script>
-    // Save the scroll position before the page unloads
-    window.addEventListener('beforeunload', function () {
-      localStorage.setItem('scrollPosition', window.scrollY);
-    });
-
-    // Restore the scroll position after the page loads
-    window.addEventListener('load', function () {
-      const scrollPosition = localStorage.getItem('scrollPosition');
-      if (scrollPosition) {
-        window.scrollTo(0, parseInt(scrollPosition, 10));
-      }
-    });
-  </script>
+  
 </head>
 <style>
   * {

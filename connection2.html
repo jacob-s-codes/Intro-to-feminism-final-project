@@ -53,7 +53,7 @@
         gsap.registerPlugin(ScrollTrigger);
       
         gsap.to(".needs-bg", {
-          backgroundPosition: "50% -1000%",
+          backgroundPosition: "left 100%",
           ease: "none", // Linear scroll effect
           scrollTrigger: {
             trigger: ".needs-bg", // Target div
@@ -65,10 +65,10 @@
         });
 
         gsap.to(".velour-bg", {
-          backgroundPosition: "50% 500%",
+          backgroundPosition: "50% 1000%",
           ease: "none", // Linear scroll effect
           scrollTrigger: {
-            trigger: ".velour-bg", // Target div
+            trigger: ".needs-bg", // Target div
             start: "top top", // Animation starts when the top of the div hits the bottom of viewport
             end: "bottom top", // Animation ends when the bottom of the div leaves the top of viewport
             scrub: true, // Smooth animation tied to scroll position

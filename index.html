@@ -106,8 +106,8 @@
       Art
     </h2>
 
-    <p class="pt-16 px-40 text-2xl text-from-right">Prior to this class, art and feminism never struck me as similar.
-      <a href="./connection2.html"><span class="underline">But things are often more connected than we may think.</span></a></p>
+    <p class="pt-16 px-40 text-2xl text-from-right">Prior to this class, art and feminism never struck me as similar. 
+      <a href="./connection2.html" class="underline">Something that I've learned from this class is that things are often more connected than we may think.</a> Whenever I feel stuck trying to understand something, I like to try to forget everything that I knew before. I like to start brand-new, clicking around until I find what works.</p>
 
     <div class="flex flex-row items-center justify-center gap-x-12 mt-24 py-8 mx-40 border-8 border-red-500 rounded-xl"
       id="computer-image">
@@ -134,24 +134,6 @@
 
     
 
-    let horizontalSections = gsap.utils.toArray(".verticalscroll");
-
-    horizontalSections.forEach((container) => {
-      let sections = container.querySelectorAll(".panel");
-
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          pin: true,
-          scrub: 0.5,
-          // base vertical scrolling on how wide the container is so it feels more natural.
-          end: "+=6000",
-          markers: false
-        }
-      });
-    })
 
 
 
@@ -163,21 +145,7 @@
 
 
 
-    const cursor = document.querySelector(".cursor");
-    document.addEventListener("mousemove", (e) => {
-      cursor.setAttribute(
-        "style",
-        "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-      );
-    });
-
-    document.addEventListener("click", () => {
-      cursor.classList.add("expand");
-
-      setTimeout(() => {
-        cursor.classList.remove("expand");
-      }, 500);
-    });
+    
 
     let sleepTime = 200;
     const el = document.getElementById("typewriter");
@@ -236,112 +204,7 @@
 
     writesecondloop();
 
-    const parallax = document.querySelector('.needs-bg');
-
-    // Initialize the Intersection Observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Check if the element is intersecting
-          if (entry.isIntersecting) {
-            console.log('Element is in view, restarting animation');
-            parallax.style.animation = 'none'; // Reset animation
-            void parallax.offsetWidth; // Trigger reflow
-            parallax.style.animation = 'parallaxMove 10s ease-in-out forwards';
-          } else {
-            console.log('Element is out of view');
-          }
-        });
-      },
-      {
-        root: null, // Observe relative to the viewport
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
-    );
-
-    // Start observing the element
-    observer.observe(parallax);
-
-    const second_parallax = document.querySelector('.velour-bg');
-
-    // Initialize the Intersection Observer
-    const second_observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Check if the element is intersecting
-          if (entry.isIntersecting) {
-            console.log('Element is in view, restarting animation');
-            second_parallax.style.animation = 'none'; // Reset animation
-            void second_parallax.offsetWidth; // Trigger reflow
-            second_parallax.style.animation = 'parallaxMove 10s ease-in-out forwards';
-          } else {
-            console.log('Element is out of view');
-          }
-        });
-      },
-      {
-        root: null, // Observe relative to the viewport
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
-    );
-
-    // Start observing the element
-    second_observer.observe(parallax);
-
-    const third_parallax = document.querySelector('.graphic-bg');
-
-    // Initialize the Intersection Observer
-    const third_observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Check if the element is intersecting
-          if (entry.isIntersecting) {
-            console.log('Element is in view, restarting animation');
-            third_parallax.style.animation = 'none'; // Reset animation
-            void third_parallax.offsetWidth; // Trigger reflow
-            third_parallax.style.animation = 'parallaxMove 10s ease-in-out forwards';
-          } else {
-            console.log('Element is out of view');
-          }
-        });
-      },
-      {
-        root: null, // Observe relative to the viewport
-        threshold: 0.5, // Trigger when 50% of the element is visible
-      }
-    );
-
-    // Start observing the element
-    third_observer.observe(parallax);
-
-
-
-    const scrollers = document.querySelectorAll(".scroller");
-
-    // If a user hasn't opted in for recuded motion, then we add the animation
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
-    }
-
-    function addAnimation() {
-      scrollers.forEach((scroller) => {
-        // add data-animated="true" to every `.scroller` on the page
-        scroller.setAttribute("data-animated", true);
-
-        // Make an array from the elements within `.scroller-inner`
-        const scrollerInner = scroller.querySelector(".scroller_inner");
-        const scrollerContent = Array.from(scrollerInner.children);
-
-        // For each item in the array, clone it
-        // add aria-hidden to it
-        // add it into the `.scroller-inner`
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", true);
-          scrollerInner.appendChild(duplicatedItem);
-        });
-      });
-    }
+    
   </script>
 </body>
 

@@ -39,6 +39,27 @@ slowerSplit.forEach((char) => {
 });
 
 gsap.fromTo(
+    ".text-from-left",
+    {
+        x: -200, // Start off-screen to the left
+        opacity: 0, // Start invisible
+    },
+    {
+        x: 0, // Slide into its original position
+        opacity: 1, // Fade in
+        duration: 1, // Animation duration (1 second)
+        scrollTrigger: {
+            trigger: ".title-text", // Element to watch
+            start: "bottom 20%", // Start when title-text reaches 80% of viewport
+            end: "bottom 30%", // End when title-text reaches 50% of viewport
+            scrub: true, // Smoothly tie animation to scroll
+            markers: false, // Debug markers
+        },
+    }
+);
+
+
+gsap.fromTo(
     ".title-text",
     {
         x: -300, // Start off-screen to the left

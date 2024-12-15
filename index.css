@@ -102,7 +102,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-position: center center;
+    /* background-position: 10% 10%; */
     background-attachment: fixed;
     animation: none;
   }
@@ -113,7 +113,7 @@
     background-repeat: no-repeat;
     animation: none;
     background-attachment: fixed;
-    background-position: 0 center;
+    
     background-blend-mode: multiply;
   }
 
@@ -123,7 +123,7 @@
     background-repeat: no-repeat;
     animation: none;
     background-attachment: fixed;
-    background-position: 0 center;
+    
     background-blend-mode: multiply;
   }
 

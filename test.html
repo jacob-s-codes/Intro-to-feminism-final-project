@@ -1,176 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<style>
-    body {
-    background-color: #c6d7de;
-    font-family: 'Montserrat';
-    padding: 3em;
-}
-
-#v0 {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 70%;
-}
-
-#set-height {
-    display: block;
-}
-
-section {
-    z-index: 1;
-    position: relative;
-}
-
-.content {
-    position: sticky;
-    position: -webkit-sticky;
-    width: 100%;
-    top: 33.3%;
-}
-
-h1 {
-    font-size: 3em;
-    background: #fff;
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin: 0;
-}
-p { font-size: 1.5em; }
-
-section:nth-of-type(1) {
-    height: 1200px;
-}
-section:nth-of-type(2) {
-    height: 1200px;
-}
-section:nth-of-type(3) {
-    height: 1200px;
-}
-section:nth-of-type(4) {
-    height: 1000px;
-}
-section:nth-of-type(5) {
-    height: 4000px;
-}
-
-.entered {
-	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-}
-
-
- @-webkit-keyframes text-focus-in {
-    0% {
-      -webkit-filter: blur(12px);
-              filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  @keyframes text-focus-in {
-    0% {
-      -webkit-filter: blur(12px);
-              filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP ScrollTrigger Background Animation</title>
   
-</style>
-<body>
-    
-    <section class="container">
-        <div class="content">
-            <h1>Scroll to Begin</h1>
-            <p>Start it like this..</p>
-        </div>
-    </section>
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <section class="container">
-        <div class="content">
-            <h1>Step 1</h1>
-            <p>Start it like this..</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="content">
-            <h1>Step 2</h1>
-            <p>Start it like this..</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="content">
-            <h1>Step 3</h1>
-            <p>Start it like this..</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="content">
-            <h1>Step 4</h1>
-            <p>Start it like this..</p>
-        </div>
-    </section>
-
-    <div id="set-height"></div>
-
-    <video id="v0" tabindex="0", autobuffer preload>
-        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="IMG_0021.MOV"></source>
-    </video>
-    <script src="sticky.js"></script>
-    <script>
-
-        enterView({
-            selector: 'section',
-            enter: function(el) {
-                el.classList.add('entered');
-            }
-        })
-    
-        var frameNumber = 0, // start video at frame 0
-        // lower numbers = faster playback
-        playbackConst = 1000, 
-        // get page height from video duration
-        setHeight = document.getElementById("set-height"), 
-        // select video element         
-        vid = document.getElementById('v0'); 
-        // var vid = $('#v0')[0]; // jquery option
-
-    // dynamically set the page height according to video length
-    vid.addEventListener('loadedmetadata', function() {
-    setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
-    });
-
-
-    // Use requestAnimationFrame for smooth playback
-    function scrollPlay(){  
-    var frameNumber  = window.pageYOffset/playbackConst;
-    vid.currentTime  = frameNumber;
-    window.requestAnimationFrame(scrollPlay);
+  <!-- Styles -->
+  <style>
+    /* Reset and general styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    window.requestAnimationFrame(scrollPlay);
-    
-    </script>
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      height: 300vh; /* To allow scrolling */
+    }
+
+    /* Background Section */
+    .needs-bg {
+      background-image: url("https://via.placeholder.com/1920x1080"); /* Test image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 0%; /* Initial position at the top */
+      height: 100vh; /* Full viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 0 5px black;
+    }
+
+    /* Text styling */
+    .needs-bg p {
+      font-size: 3rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scrollable Section -->
+  <div class="needs-bg">
+    <p>Scrolling Background Animation</p>
+  </div>
+
+  <!-- GSAP Script -->
+  <script>
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate the background position on scroll
+    gsap.to(".needs-bg", {
+      backgroundPositionY: "100%", // Move the background image vertically
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".needs-bg",
+        start: "top bottom", // Animation starts when div enters viewport
+        end: "bottom top",   // Animation ends when div exits viewport
+        scrub: true,         // Ties animation to scroll position
+        markers: true,       // Debugging markers (remove in production)
+      },
+    });
+  </script>
 </body>
 </html>

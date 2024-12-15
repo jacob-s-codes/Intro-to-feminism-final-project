@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacob Intro to Feminism Final</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Sour Gummy", sans-serif;
+        /* overflow: hidden; */
+    }
+
+    html {
+        cursor: default;
+    }
+</style>
+
+<body class="bg-black text-white font-customFont everything z-0">
+    <div class="needs-bg py-[50vh] bg-gray-300">
+
+        <p class="z-10 pl-24 text-blue-300 text-center xl:text-[155px] text-8xl flex justify-center">But art is so much
+            more
+        </p>
+    </div>
+
+    <div class="py-[50vh] velour-bg bg-gray-200">
+        <p class=" pl-12 xl:text-[155px] text-8xl flex justify-center text-blue-300">This is art</p>
+    </div>
+
+    <div class="py-[50vh] graphic-bg bg-gray-500">
+        <a href="./connection3.html" class="pl-12 xl:text-[155px] text-8xl flex justify-center text-blue-300">And so is this</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="./src/index.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.to(".needs-bg", {
+          backgroundPosition: "50% -1000%",
+          ease: "none", // Linear scroll effect
+          scrollTrigger: {
+            trigger: ".needs-bg", // Target div
+            start: "top 150%", // Animation starts when the top of the div hits the bottom of viewport
+            end: "bottom top", // Animation ends when the bottom of the div leaves the top of viewport
+            scrub: true, // Smooth animation tied to scroll position
+            markers: true, // For debugging
+          },
+        });
+
+        gsap.to(".velour-bg", {
+          backgroundPosition: "50% 500%",
+          ease: "none", // Linear scroll effect
+          scrollTrigger: {
+            trigger: ".velour-bg", // Target div
+            start: "top top", // Animation starts when the top of the div hits the bottom of viewport
+            end: "bottom top", // Animation ends when the bottom of the div leaves the top of viewport
+            scrub: true, // Smooth animation tied to scroll position
+            markers: true, // For debugging
+          },
+        });
+
+        gsap.to(".graphic-bg", {
+          backgroundPosition: "50% 1000%",
+          ease: "none", // Linear scroll effect
+          scrollTrigger: {
+            trigger: ".graphic-bg", // Target div
+            start: "top 200%", // Animation starts when the top of the div hits the bottom of viewport
+            end: "bottom top", // Animation ends when the bottom of the div leaves the top of viewport
+            scrub: true, // Smooth animation tied to scroll position
+            markers: true, // For debugging
+          },
+        });
+      </script>
+      
+
+</body>
+
+</html>

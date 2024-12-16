@@ -667,6 +667,10 @@ video {
   margin-top: 16rem;
 }
 
+.mr-24{
+  margin-right: 6rem;
+}
+
 .block{
   display: block;
 }
@@ -1110,6 +1114,11 @@ video {
 
 .text-\[300px\]{
   font-size: 300px;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold{

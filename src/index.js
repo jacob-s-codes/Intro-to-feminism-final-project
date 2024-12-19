@@ -102,14 +102,14 @@ gsap.fromTo(
 gsap.fromTo(
     "#computer-image",
     {
-        scale: 0.75, // Start at normal size
+        scale: 0.9, // Start at normal size
     },
     {
         scale: 1.2,
         scrollTrigger: {
             trigger: "#computer-image", // Element to watch
             start: "top 60%", // Start when the image is 80% down the viewport
-            end: "bottom 70%", // End when the image is 50% down the viewport
+            end: "bottom 100%", // End when the image is 50% down the viewport
             scrub: true, // Smoothly tie animation to scroll
             markers: false, // Debug markers
         },

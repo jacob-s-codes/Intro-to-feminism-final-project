@@ -1,0 +1,18 @@
+Start with art? Where to go after though...?
+
+Use figma for designing the different lesson SVGs.
+
+Maybe starting with original image from our class? Maybe a globe?
+
+Could be cool to try to think of things as "lessons" so that it can connect back to a classroom but also the idea of lessons starting at 0 to incorporate a computer science theme.
+
+Switch things from vertical to horizontal scroll to provide variation and also because most websites don't do this -> idea of going agains the normal website?
+
+!! Javascript animation for the vertical scroll not working, fix later
+
+Look back at how links could play into the project? --> maybe a throughline of things being linked and the user has to link to them? (Could add complexity as well?)
+
+Ending as a way of showing completion? Also trying to convey the cyclical nature of this. Maybe go back to the first page to show that you can keep learning and improving? 
+
+
+
